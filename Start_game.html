@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .profile_bg {
+            position: fixed;
+            bottom: 0vh;
+            right: 0vh;
+            z-index: -2000;
+            height: 100vh;
+        }
+        
+        .main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            position: absolute;
+        }
+        
+        .inner-main {
+            width: 50%;
+            height: 70%;
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+        
+        .center-div {
+            width: 100%;
+            height: 100%;
+            padding: 5px;
+            background: white;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content:space-evenly;
+            color: rgba(0, 0, 0, 0.6);
+            font-size: 1.2rem;
+            font-weight: bolder;
+        }
+        
+        .Quiz-image {
+            width: 100%;
+            height: 40%;
+        }
+        
+        .Quiz-image img {
+            width: 60%;
+            height: 100%;
+        }
+        
+        .inner-main .Quiz-title {
+            width: 100%;
+            text-transform: uppercase;
+        }
+
+        .Quiz-number{
+           color: #d0f224;
+           text-shadow: 1px 1px #15141b;
+        }
+        
+        
+        
+        .play-button input[type=button] {
+            padding: 1rem 2rem 1rem 2rem;
+            border-radius: 20px;
+            border: none;
+            font-weight: bolder;
+            cursor: pointer;
+            background-color: #d0f224;
+            animation: blink 0.5s infinite alternate;
+            outline: none;
+        } 
+
+        @keyframes blink {
+            0%{transform: scale(1);box-shadow: 0;}
+            100%{transform: scale(1.025);box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.6);}
+        }
+        @media screen and (max-width:576px){
+          .inner-main {
+            width: 85%;
+            height: 70%;
+            }
+            .Quiz-image {
+            width: 100%;
+            height: 50%;
+        }
+        
+           .Quiz-image img {
+            width: 85%;
+            height: 100%;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <svg class="profile_bg" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0)">
+            <rect width="1440" height="1024" fill="white" />
+            <path
+                d="M672.627 944.31C659.026 923.51 664.862 895.621 685.663 882.02L863.668 765.627C884.468 752.026 912.357 757.862 925.958 778.663L1042.2 956.443C1055.81 977.243 1049.97 1005.13 1029.17 1018.73L940.166 1076.93L851.163 1135.13C830.363 1148.73 802.474 1142.89 788.873 1122.09L672.627 944.31Z"
+                fill="url(#paint0_linear)" />
+            <g filter="url(#filter0_d)">
+                <path
+                    d="M1390.69 633.341C1412.48 621.392 1439.83 629.372 1451.78 651.164L1587.88 899.39C1599.83 921.182 1591.85 948.535 1570.06 960.483L1300.08 1108.51C1278.29 1120.46 1250.94 1112.48 1238.99 1090.68L1102.89 842.458C1090.94 820.666 1098.92 793.314 1120.71 781.365L1390.69 633.341Z"
+                    fill="url(#paint1_linear)" />
+            </g>
+            <path
+                d="M1285.19 351.07C1299.72 343.103 1317.95 348.422 1325.92 362.949L1373.6 449.898C1381.57 464.425 1376.25 482.66 1361.72 490.627L1283.16 533.71C1268.63 541.677 1250.4 536.358 1242.43 521.831L1194.75 434.882C1186.78 420.355 1192.1 402.12 1206.63 394.153L1285.19 351.07Z"
+                fill="url(#paint2_linear)" />
+        </g>
+        <defs>
+            <filter id="filter0_d" x="1077.26" y="611.706" width="536.259" height="526.436" filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                <feOffset dy="4" />
+                <feGaussianBlur stdDeviation="2" />
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+            </filter>
+            <linearGradient id="paint0_linear" x1="774.665" y1="823.824" x2="940.166" y2="1076.93"
+                gradientUnits="userSpaceOnUse">
+                <stop stop-color="#E5E5E5" />
+                <stop offset="1" stop-color="#D0F224" />
+            </linearGradient>
+            <linearGradient id="paint1_linear" x1="1519.83" y1="775.277" x2="1170.94" y2="966.571"
+                gradientUnits="userSpaceOnUse">
+                <stop stop-color="#D0F224" />
+                <stop offset="1" stop-color="#F5F5F5" stop-opacity="0" />
+            </linearGradient>
+            <linearGradient id="paint2_linear" x1="1349.76" y1="406.424" x2="1218.59" y2="478.356"
+                gradientUnits="userSpaceOnUse">
+                <stop stop-color="#D0F224" />
+                <stop offset="1" stop-color="#E5E5E5" />
+            </linearGradient>
+            <clipPath id="clip0">
+                <rect width="1440" height="1024" fill="white" />
+            </clipPath>
+        </defs>
+    </svg>
+    <div class="main">
+
+        <div class="inner-main">
+            <div class="center-div">
+                <div class="Quiz-image">
+                    <img src="./Start_game.svg" alt="">
+                </div>
+                <div class="Quiz-title">
+                    QUIZ TITLE 
+                </div>
+                <div class="Quiz-number">
+                    <span>20</span><span> Questions</span>
+                </div>
+                <div class="player-name">
+                    Rishabh Tiwari
+                </div>
+                <div class="play-button">
+                    <input type="button" value="Play" name="play-button">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
